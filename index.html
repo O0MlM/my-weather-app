@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="app-container">
         <h1>Weather App</h1>
-        <form id="search-form">
-            <input type="text" id="city-input" placeholder="ค้นหาชื่อเมือง..." required>
-            <button type="submit">ค้นหา</button>
+        <form id="search-form" autocomplete="off">
+            <input
+                type="text"
+                id="city-input"
+                placeholder="ค้นหาชื่อเมือง..."
+                required
+                spellcheck="false"
+                autocapitalize="words"
+            />
+            <button type="submit" aria-label="ค้นหา">
+                🔍
+            </button>
         </form>
-        <div id="weather-info-container" class="weather-info">
-            <!-- ข้อมูลสภาพอากาศจะแสดงที่นี่ -->
+
+        <div id="weather-info-container" class="weather-info"></div>
+
+        <h3>พยากรณ์อากาศล่วงหน้า 5 วัน</h3>
+        <div id="forecast-container" class="forecast-container"></div>
+
+        <div id="history-container">
+            <h4>ประวัติการค้นหา</h4>
+            <ul id="history-list"></ul>
         </div>
     </div>
     <script src="script.js"></script>
